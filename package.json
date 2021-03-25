@@ -1,11 +1,11 @@
 {
   "name": "api-rest-nodejs",
   "version": "1.0.0",
-  "description": "Api rest del master de JS",
+  "description": "Server for Tiny House web page",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon gp-contable.js"
+    "start": "nodemon server.js"
   },
   "author": "Facundo Gamond",
   "license": "MIT",
