@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy tiny house web
         uses: appleboy/ssh-action@v0.1.2
@@ -15,8 +15,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
      
           script: |
-            cat ${{secrets.SSH_HOST}}
-            cat ${{secrets.SSH_KEY}}
-            cat ${{ secrets.SSH_USERNAME }}
             mkdir test 
             
