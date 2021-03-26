@@ -11,7 +11,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.SSH_HOST}} # IP address of the server you wish to ssh into
-          key: MIIEpAIBAAKCAQEAwE/hT8OZKdDLS+ZVZ8Fe8GJ2cWhOefgKH8mF6Ymxq6UA/+kF
+          key: "MIIEpAIBAAKCAQEAwE/hT8OZKdDLS+ZVZ8Fe8GJ2cWhOefgKH8mF6Ymxq6UA/+kF
 z/5k2ryx+BcHZzcR3L/KXsWGmh0Aziy1x1044++ukSoKfFR3gXG5kpiNnhlzkB37
 GuXsotRVvU1C5kntiRT4Ps5D5nm8wckujeibOTX+MdJt0KDwT2AeLO8EC6ZwKvLi
 V0cM1hqbGu6jwRrQ+QtPyckOTYpYhJhAm54kTI/KvhHd6eE6fISBoyuE6pFNywYS
@@ -35,7 +35,7 @@ iBSFrrBDWn/g1HYdUNlUP798mkhGFH+hcO6mWWEZMYHYLIrjrfMgsBh9V8iUsEEr
 T1T94iJx+9Yd1eGBOPcXIhGDQ3PQ7uFbbBVnDufArE5F8DbBDbHSjcwT19orc82z
 wFkocQKBgQCQOTmJiUD2RBjcbRyRyD7OyEOJpXAL7rsYNRcsxiMKdIyXYo/AYxmI
 V/XgK0iu3Qhbb7IMG5lFr3LzZ1RswfndDOO2eQ6Iperh6XgkZDRULu+kCbeb58rd
-ELaWt48DlxMw+Ccu4TAgA2+DU3PhWvfAXPCQOKRyQh3gB4dPMLJs6w==
+ELaWt48DlxMw+Ccu4TAgA2+DU3PhWvfAXPCQOKRyQh3gB4dPMLJs6w=="
 # Private or public key of the server
           username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
      
