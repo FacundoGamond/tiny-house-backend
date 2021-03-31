@@ -17,6 +17,8 @@ jobs:
             cd ..
             cd home/tiny-house/tiny-house-backend 
             git pull
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             npm install
             pm2 restart "Nomos Web" 
             
