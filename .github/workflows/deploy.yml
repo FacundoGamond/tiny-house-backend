@@ -16,4 +16,5 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             mkdir test 
+            git pull
             
