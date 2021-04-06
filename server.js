@@ -6,5 +6,5 @@ var app = require('./app'); //Configuracion de express
 var port = 7000;
 
 app.listen(port, () => {
-    console.log("Servidor corriendo correctamente en la url: http://localhost:"+port);
+    console.log("Servidor corriendo correctamente en la url: http://localhost:" + port);
 });
