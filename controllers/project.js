@@ -7,13 +7,18 @@ var controller = {
         //Recojo los parametros que me lleguen
         var params = req.body;
 
+        let ts = Date.now();
+        let date_ob = new Date(ts);
+        let date = date_ob.getDate();
+        let month = date_ob.getMonth() + 1;
+        let year = date_ob.getFullYear();
+
         var emailData = {
             name: params.name,
-            lastName: params.lastName,
-            email: params.email,
             phone: params.phone,
-            consult: params.consult,
-            date: params.date
+            email: params.email,
+            place: params.place,
+            date: date + "-" + month + "-" + year
         }
 
 
@@ -30,19 +35,17 @@ var controller = {
         var mailOptions = {
             from: "Gestor de consulta", // sender address
             to: process.env.TO, // list of receivers
-            subject: "Consulta de " + emailData.name + " " + emailData.lastName,
-            text: "Telefono: " + emailData.phone + " email: " + emailData.email + "Consulta:" + emailData.consult,
+            subject: "Consulta de " + emailData.name,
+            text: "Telefono: " + emailData.phone + " email: " + emailData.email,
             html: `
             <div style="background-color: #444; border: 2px solid #ccc; border-radius: 10px; padding: 0px; margin: 0px;">
-                <h1 style="display:block; margin: 0px; padding: 0px; width: 100%; text-align: center; height: 120px; line-height: 120px; background-color: rgb(255, 255, 87) !important; border-bottom: 2px solid #ccc">Consulta Nueva!</h1>
+                <h1 style="display: block; padding: 30px 0; margin: 0; width: 100%; text-align: center; line-height: 1.2em; background-color: rgb(255, 255, 87) !important; border-bottom: 2px solid #ccc; justify-content: center;">Consulta Nueva! (${emailData.date})<br>Nomos Web</h1>
                 <h2 style="padding-left: 40px;">Datos de prospecto</h2>
-                <h4 style="padding-left: 80px;">Nombre: ${emailData.name} ${emailData.lastName}</h4>
+                <h4 style="padding-left: 80px;">Nombre: ${emailData.name}</h4>
                 <h4 style="padding-left: 80px;">Telefono: ${emailData.phone}</h4>
                 <h4 style="padding-left: 80px;">Email: ${emailData.email}</h4>
-                <hr>
-                <h2 style="padding-left: 40px;">Consulta</h2>
-                <p style="display:block; padding-left: 80px; margin-bottom: 100px;">${emailData.consult}</p>
-                <h5 style="display: block; width: 100%; text-align: center;">Powered by Facundo Gamond</h5>
+                <h4 style="padding-left: 80px;">Lugar: ${emailData.place}</h4>
+                <h5 style="display: block; width: 100%; text-align: center;">Powered by <a href="https://www.facundogamond.com.ar/" target="_blanc">Facundo Gamond</a></h5>
             </div>
             `
         }
@@ -60,8 +63,6 @@ var controller = {
                 });
             }
         })
-
-
     }
 
 };
